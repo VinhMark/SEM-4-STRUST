@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+	
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+	<h:outputScript library="js" name="demo.js"></h:outputScript>
+	
+</h:head> 
+<body> 
+
+	<h:graphicImage library="images" name="img1.png" styleClass="photo"  onclick="clickMe()"/><!-- Mặc định sẽ đứng ở resource folder -->
+
+	<h:form>
+		<h:commandButton action="#{demoManagedBean.index()}" value="demo"/>
+		<br></br>
+		<h:commandLink action="#{demoManagedBean.index()}" value="demo2" />
+	</h:form>
+</body> 
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<h:dataTable border="1" var="b" value="#{homeComtroller.books}">
+
+		<h:column>
+				<f:facet name="header">Id</f:facet>
+			#{b.bookId}
+		</h:column>
+		
+		<h:column>
+				<f:facet name="header">Title</f:facet>
+			#{b.bookTitle}
+		</h:column>
+		
+		<h:column>
+				<f:facet name="header">Name</f:facet>
+			#{b.bookPrice}
+		</h:column>
+		
+		<h:column>
+			<f:facet name="header">Option</f:facet>
+			<h:commandLink action="#{homeComtroller.update(b)}" value="Update" />
+		</h:column>
+	</h:dataTable>
+</body>
+</html>

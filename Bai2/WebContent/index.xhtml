@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+	
+	<h:form>
+		From <p:calendar value="#{holidayManagedBean.from}" 
+				pattern="dd/MM/yyyy"></p:calendar> 
+		To <p:calendar value="#{holidayManagedBean.to}" 
+				pattern="dd/MM/yyyy"></p:calendar>
+		<h:commandButton action="#{holidayManagedBean.search()}" 
+			value="Search" />
+		<br></br>
+		<h:dataTable var="holiday" 
+			value="#{holidayManagedBean.holidays}" border="1">
+			<h:column>
+				<f:facet name="header">firstName</f:facet>
+				#{holiday.firstName}
+			</h:column>
+			<h:column>
+				<f:facet name="header">lastName</f:facet>
+				#{holiday.lastName}
+			</h:column>
+			<h:column>
+				<f:facet name="header">fromDate</f:facet>
+				#{holiday.fromDate}
+			</h:column>
+			<h:column>
+				<f:facet name="header">toDate</f:facet>
+				#{holiday.toDate}
+			</h:column>
+			<h:column>
+				<f:facet name="header">reason</f:facet>
+				#{holiday.reason}
+			</h:column>
+		</h:dataTable>
+	</h:form>
+	
+</body> 
+</html>

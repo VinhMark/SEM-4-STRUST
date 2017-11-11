@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+<h:head>
+	
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+	<h:outputScript library="js" name="demo.js"></h:outputScript>
+	
+</h:head> 
+<body> 
+
+		<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>#{demoManagedBean.product.id}</td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td>#{demoManagedBean.product.name}</td>
+		</tr>
+		<tr>
+			<td>Price</td>
+			<td>#{demoManagedBean.product.price}</td>
+		</tr>
+		<tr>
+			<td>Quantity</td>
+			<td>#{demoManagedBean.product.quantity}</td>
+		</tr>
+		<tr>
+			<td>Photo</td>
+			<td><h:graphicImage library="images" name="#{demoManagedBean.product.photo}" /></td>
+		</tr>
+		<tr>
+			<td>Total</td>
+			<td>#{demoManagedBean.product.price * demoManagedBean.product.quantity}</td>
+		</tr>
+	</table>
+	
+
+</body> 
+</html>

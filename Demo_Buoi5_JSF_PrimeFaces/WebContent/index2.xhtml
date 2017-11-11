@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<h:messages />
+	<h:form prependId="false">
+		<table cellpadding="2" cellspacing="1">
+			<tr>
+				<td>Username</td>
+				<td><h:inputText id="username" required="true" requiredMessage="Username is not emptry"
+						value="#{employeeMangedBean.employee.username}" >
+							<f:validateLength minimum="2" maximum="10"></f:validateLength>
+							<f:validator validatorId="usernameValidate"/>
+						</h:inputText> 
+						<h:message
+						for="username" /></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><h:inputSecret id="age" required="true" requiredMessage="Password is not emptry"
+						value="#{employeeMangedBean.employee.password}" >
+						<f:validateLongRange minimum="18" maximum="50"></f:validateLongRange>
+						</h:inputSecret> 
+						<h:message for="age" /></td>
+			</tr>
+			<tr>
+				<td>Age</td>
+				<td><h:inputSecret id="age" required="true" requiredMessage="Age is not emptry"
+						value="#{employeeMangedBean.employee.age}" >
+							<f:validateLength minimum="2" maximum="10"></f:validateLength>
+							<f:validateRegex pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" />
+						</h:inputSecret> 
+						<h:message for="password" /></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><h:commandButton action="#{employeeMangedBean.save()}"
+						value="Save" /></td>
+			</tr>
+		</table>
+	</h:form>
+
+</body>
+</html>

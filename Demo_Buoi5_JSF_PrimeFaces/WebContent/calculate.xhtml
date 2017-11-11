@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+	<h:form>
+		<table cellpadding="2" cellspacing="2">
+			<tr>
+				<td>Number 1</td>
+				<td>
+					<h:inputText value="#{calculateManagedBean.number1}" />
+				</td>
+			</tr>
+			<tr>
+				<td>Number 2</td>
+				<td>
+					<h:inputText value="#{calculateManagedBean.number2}" />
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>
+					<h:selectOneRadio value="#{calculateManagedBean.operator}">
+						<f:selectItem itemValue="+" itemLabel="Cộng"/>
+						<f:selectItem itemValue="-" itemLabel="Trừ"/>
+						<f:selectItem itemValue="*" itemLabel="Nhân"/>
+						<f:selectItem itemValue="/" itemLabel="Chia"/>
+					</h:selectOneRadio>>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h:commandButton action="#{calculateManagedBean.calculate()}" value="=" />
+				</td>
+				
+				<td>
+					<h:inputText value="#{calculateManagedBean.result}" />
+				</td>
+			</tr>
+		</table>
+	</h:form>
+</body> 
+</html>

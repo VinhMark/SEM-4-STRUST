@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+
+	<h:form>
+
+		<table cellpadding="2" cellspacing="2">
+			<tr>
+				<td>Username</td>
+				<td><h:inputText value="#{accountManagedBean.account.username}" />
+				</td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><h:inputText value="#{accountManagedBean.account.password}" />
+				</td>
+			</tr>
+			<tr>
+				<td>Description</td>
+				<td><h:inputTextarea
+						value="#{accountManagedBean.account.description}" cols="20"
+						rows="5" /></td>
+			</tr>
+			<tr>
+				<td>Status</td>
+				<td><h:selectBooleanCheckbox
+						value="#{accountManagedBean.account.status}" /></td>
+			</tr>
+
+			<tr>
+				<td>Language</td> 
+				<td><h:selectManyCheckbox layout="pageDirection"
+						value="#{accountManagedBean.account.language}">
+						<f:selectItems var="language"
+							value="#{accountManagedBean.languages}"
+							itemLabel="#{language.name}"
+							itemValue="#{language.id}" />
+					</h:selectManyCheckbox></td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td>
+					<h:selectOneRadio value="#{accountManagedBean.account.gender}">
+						<f:selectItem itemValue="m" itemLabel="Male"/>
+						<f:selectItem itemValue="f" itemLabel="Female"/>
+					</h:selectOneRadio>
+				</td>
+			</tr>
+			<tr>
+				<td>Role</td>
+				<td>
+					<h:selectOneMenu value="#{accountManagedBean.account.role}">
+						<f:selectItem itemValue="r1" itemLabel="Role 1"/>
+						<f:selectItem itemValue="r2" itemLabel="Role 2"/>
+						<f:selectItem itemValue="r3" itemLabel="Role 3"/>
+						<f:selectItem itemValue="r4" itemLabel="Role 4"/>
+						<f:selectItem itemValue="r5" itemLabel="Role 5"/>
+					</h:selectOneMenu>
+				</td>
+			</tr>
+			<tr>
+				<td>Birthday</td>
+				<td>
+					<p:calendar value="#{accountManagedBean.account.birthday}" showOn="button" pattern="dd/MM/yyyy"></p:calendar>
+				</td>
+			</tr>
+			<tr>
+				<td>Detail</td>
+				<td>
+					<p:editor value="#{accountManagedBean.account.detail}"></p:editor>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><h:commandButton action="#{accountManagedBean.save()}"
+						value="Save" /></td>
+			</tr>
+		</table>
+
+	</h:form>
+
+</body>
+</html>

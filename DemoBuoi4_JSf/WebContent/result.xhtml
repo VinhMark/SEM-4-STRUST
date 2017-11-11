@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<h:form>
+	Gia tri a: #{demoManagedBean.a} <br></br>
+	Username : #{demoManagedBean.username}
+	<br></br>
+		<table border="1">
+			<tr>
+				<td>ID</td>
+				<td>#{demoManagedBean.product.id}</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td>#{demoManagedBean.product.name}</td>
+			</tr>
+			<tr>
+				<td>Price</td>
+				<td>#{demoManagedBean.product.price}</td>
+			</tr>
+			<tr>
+				<td>Quantity</td>
+				<td>#{demoManagedBean.product.quantity}</td>
+			</tr>
+			<tr>
+				<td>Photo</td>
+				<td><h:graphicImage library="images"
+						name="#{demoManagedBean.product.photo}" /></td>
+			</tr>
+			<tr>
+				<td>Total</td>
+				<td>#{demoManagedBean.product.price *
+					demoManagedBean.product.quantity}</td>
+			</tr>
+		</table>
+
+		<h3>Product list</h3>
+
+		<h:dataTable border="1" var="p" value="#{demoManagedBean.products}">
+
+			<h:column>
+				<f:facet name="header">Id</f:facet>
+			#{p.id}
+		</h:column>
+			<h:column>
+				<f:facet name="header">Name</f:facet>
+			#{p.name}
+		</h:column>
+			<h:column>
+				<f:facet name="header">Price</f:facet>
+			#{p.price}
+		</h:column>
+			<h:column>
+				<f:facet name="header">Quantity</f:facet>
+			#{p.quantity}
+		</h:column>
+			<h:column>
+				<f:facet name="header">Photo</f:facet>
+				<h:graphicImage library="images" name="#{p.photo}" />
+			</h:column>
+			<h:column>
+				<f:facet name="header">Option</f:facet>
+				<h:commandLink action="#{demoManagedBean.detail(p)}" value="Detail" />
+			</h:column>
+		</h:dataTable>
+
+
+		<h3>Product list</h3>
+		<table border="1">
+			<tr>
+				<td>Id</td>
+				<td>Name</td>
+				<td>photo</td>
+			</tr>
+			<ui:repeat var="p" value="#{demoManagedBean.products}">
+				<tr>
+					<td>#{p.id}</td>
+					<td>#{p.name}</td>
+					<td><h:graphicImage library="images" name="#{p.photo}" /></td>
+				</tr>
+			</ui:repeat>
+		</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</h:form>
+</body>
+</html>

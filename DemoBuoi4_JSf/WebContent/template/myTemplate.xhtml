@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+	<h:form>
+	
+		<h:commandLink action="#{homeManagedBean.index()}" value="Home" />||
+		<h:commandLink action="#{aboutManagedBean.index()}" value="About us" />||
+		<h:commandLink action="#{newManagedBean.index()}" value="New" />
+
+		<br></br>
+		<br></br>		
+		
+		<ui:insert name="content">
+			<!-- Khu vuwjv thay đổi -->
+		</ui:insert>
+		
+		<br></br>
+		<br></br>
+		Copyright 2017
+	</h:form>
+</body> 
+</html>
